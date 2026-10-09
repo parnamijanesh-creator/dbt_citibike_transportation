@@ -1,0 +1,177 @@
+# ==============================================================================
+# Production .gitignore for Data Engineering (Python + uv + dbt + Snowflake)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment Variables, Secrets & Credentials
+# ------------------------------------------------------------------------------
+# Local environment variables
+.env
+.env.*
+.env.local
+!.env.example
+!.env*.example
+
+# dbt connection profiles & credential configurations
+profiles.yml
+**/profiles.yml
+citibike_dbt/profiles.yml
+!profiles.yml.example
+!profiles.example.yml
+!**/profiles.yml.example
+!**/profiles.example.yml
+
+# dbt user telemetry & tracking IDs
+.user.yml
+**/.user.yml
+
+# Generic secrets and sensitive configs
+secrets.yml
+secrets.yaml
+
+# Private keys, certificates & cloud service account tokens
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*service_account*.json
+*credentials*.json
+
+# ------------------------------------------------------------------------------
+# 2. dbt Build Artifacts & Logs
+# ------------------------------------------------------------------------------
+target/
+**/target/
+dbt_packages/
+**/dbt_packages/
+dbt_modules/
+**/dbt_modules/
+logs/
+**/logs/
+*.log
+dbt.log
+
+# ------------------------------------------------------------------------------
+# 3. Python Bytecode, Packaging & Virtual Environments
+# ------------------------------------------------------------------------------
+# Bytecode and compilation caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments (venv, uv, poetry, conda)
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.conda/
+
+# Distribution and package build artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ------------------------------------------------------------------------------
+# 4. Testing, Code Quality & Linters
+# ------------------------------------------------------------------------------
+.cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.sqlfluffcache
+
+# ------------------------------------------------------------------------------
+# 5. Local Data Files, Dumps & Databases
+# ------------------------------------------------------------------------------
+# Local data directory and raw data dumps
+data/
+**/data/
+*.csv
+*.csv.gz
+*.parquet
+*.orc
+*.avro
+*.tsv
+*.jsonl
+*.zip
+*.tar.gz
+*.gz
+*.bz2
+*.xz
+*.7z
+
+# Retain dbt seed files in version control
+!**/seeds/*.csv
+!**/seeds/**/*.csv
+
+# Local embedded database engines
+*.duckdb
+*.duckdb.wal
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------------------------
+# 6. Notebooks, Scratch & Temporary Files
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+scratch/
+tmp/
+temp/
+*.tmp
+
+# ------------------------------------------------------------------------------
+# 7. Operating System & Editor / IDE Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.*.swp
+.*.swo
+*.sublime-workspace
+*.sublime-project
