@@ -1,0 +1,23 @@
+[project]
+name = "transportation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "parnamijanesh-creator", email = "parnamijanesh@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core~=1.11.0",
+    "dbt-snowflake~=1.11.0",
+    "requests>=2.34.2",
+    "snowflake-connector-python>=4.8.0",
+    "sqlfluff>=4.4.0",
+]
+
+[project.scripts]
+transportation = "transportation:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"

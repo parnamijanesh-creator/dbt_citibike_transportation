@@ -1,0 +1,11 @@
+# dbt build artifacts & logs
+target/
+dbt_packages/
+logs/
+
+# dbt credentials & local user telemetry
+profiles.yml
+.user.yml
+!profiles.yml.example
+!profiles.example.yml
+dbt_internal_packages/
