@@ -110,6 +110,8 @@ htmlcov/
 # Local data directory and raw data dumps
 data/
 **/data/
+eda_results/
+**/eda_results/
 *.csv
 *.csv.gz
 *.parquet

@@ -1,0 +1,6 @@
+sources:
+  - name: citibike
+    database: citibike_raw
+    schema: trips
+    tables:
+      - name: raw_tripdata

@@ -1,15 +1,2 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+   Construct dim_stations as a physical table extracting deduplicated station identifiers, names, and coordinates across both departure and arrival staging records.
+   Inject the Sentinel record into dim_stations representing unassigned and dockless locations, explicitly assigning a standardized fallback natural ID, a descriptive label, null coordinates, and a false valid-coordinate flag.   Generate surrogate primary keys for both dimensions.   Attach and execute generic tests asserting uniqueness and nullability on dimension primary keys. 
